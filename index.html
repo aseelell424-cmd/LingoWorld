@@ -1,245 +1,288 @@
-<!DOCTYPE html>
-Upgrade my existing application, Lingo World, into a
-modern, responsive, social language-learning platform.
+<!DOCTYPE html>Act as a senior full-stack developer, UI/UX designer,
+database architect, and software tester.
+
+PROJECT NAME: LingoWorld 🌍
+PROJECT TYPE: A complete, modern language-learning platform.
 
 IMPORTANT:
-Keep the existing project and improve it instead of
-creating an unrelated application.
+Inspect my existing GitHub repository and its files before
+making changes. Preserve useful existing features, fix bugs,
+and improve the project instead of blindly deleting everything.
 
-LANGUAGES:
-Support 14 languages:
-English, Spanish, French, German, Italian, Korean,
-Japanese, Chinese, Turkish, Russian, Portuguese,
-Arabic, Dutch, and Greek.
+If you have repository access, implement the changes directly.
+If you do not, generate all required project files and explain
+exactly where each file belongs.
 
-LEARNING SYSTEM:
-Create 1,000 vocabulary entries for each language,
-organized into progressive learning levels.
+==============================
+1. LANGUAGES
+==============================
 
-Each vocabulary entry should include:
-- Word in the target language
-- Translation into the learner's selected language
-- Example sentence
-- Pronunciation guidance
-- Audio playback when available
-- Difficulty level
-- Review status
+Support these 14 languages:
+1. English
+2. Spanish
+3. French
+4. German
+5. Italian
+6. Korean
+7. Japanese
+8. Chinese
+9. Turkish
+10. Russian
+11. Portuguese
+12. Arabic
+13. Dutch
+14. Greek
 
-Create interactive quizzes, matching games, listening
-exercises, progress tracking, achievements, and daily
-learning goals.
+Allow users to choose their native language and the language
+they want to learn.
 
-Do not use placeholder words to pretend that the
-complete vocabulary database is available.
+==============================
+2. LEARNING SYSTEM
+==============================
 
-USER ACCOUNTS:
-Create registration, login, logout, and profile editing.
+Build a structured learning system with:
+- 1,000 vocabulary words per language as a long-term content
+  target, organized into categories and difficulty levels.
+- Translation and clear explanations.
+- Example sentences with translations.
+- Audio pronunciation using supported speech technology.
+- Beginner, intermediate, and advanced levels.
+- Grammar lessons and reading exercises.
+- Listening and speaking practice.
+- Multiple-choice quizzes.
+- Vocabulary review and spaced repetition.
+- Daily learning goals and streaks.
+- Progress tracking and achievements.
 
-Profiles may include:
-- Display name and avatar
-- Age range
-- Gender options
-- Country
-- Native language
-- Target languages
-- Language proficiency
-- Hobbies and interests
-- Short biography
+Do not invent translations or claim that 1,000 verified words
+are available if the actual content has not been created.
+Build an expandable vocabulary database and clearly identify
+sample content.
 
-Protect personal information and provide privacy controls.
+==============================
+3. DESIGN AND USER EXPERIENCE
+==============================
 
-SOCIAL AUDIO ROOMS:
-Create audio rooms with a maximum of five participants.
+Create a beautiful, professional, modern interface.
 
-Each room must support:
-- Five participant seats
-- Live microphone audio
-- Mute and unmute controls
-- Request-to-speak functionality
-- Host controls
-- Text chat
-- Participant list
-- Room title and target language
-- Leave-room button
-- Report and block features
+Design requirements:
+- Responsive on Android, iPhone, tablets, and computers.
+- Attractive homepage and dashboard.
+- Simple navigation and readable typography.
+- Light and dark themes.
+- Smooth, accessible interactions.
+- Arabic right-to-left layout.
+- English and other left-to-right language layouts.
+- Language selector with recognizable language names.
+- Clear loading, success, and error messages.
 
-Use a real-time audio service and a secure backend.
-Do not simulate live audio with buttons that do nothing.
+Use a consistent design system with reusable components.
 
-MESSAGING:
-Provide private messaging between permitted users,
-with reporting, blocking, privacy settings, and
-appropriate safeguards for younger users.
+==============================
+4. ACCOUNTS AND PROFILES
+==============================
 
-AI LANGUAGE TUTOR:
-Create an AI tutor available through a subscription.
+Implement:
+- Secure registration and login.
+- Email verification and password reset.
+- User profiles and profile pictures.
+- Selected native and learning languages.
+- Learning goals and progress.
+- Account settings.
+- Secure logout and account deletion.
 
-The tutor should support:
-- Interactive language conversations
-- Vocabulary explanations
-- Grammar corrections
-- Speaking practice
-- Personalized quizzes
-- Progress summaries
+Use a trusted authentication provider.
+Never store plaintext passwords.
 
-Connect it to a real AI service through a secure backend.
-Never expose API keys in frontend JavaScript.
+==============================
+5. PRIVATE MESSAGING AND SAFETY
+==============================
 
-SUBSCRIPTIONS:
-Provide a free plan and a premium plan.
+Create a messaging system with:
+- Private conversations.
+- Message timestamps and delivery states.
+- Blocking and reporting users.
+- Privacy settings.
+- Rate limiting and spam protection.
+- Server-side authorization.
+- Appropriate moderation tools.
 
-The free plan should include basic vocabulary learning,
-core lessons, and access to permitted social rooms.
+Users must only access conversations they are authorized
+to view. Do not expose private messages publicly.
 
-Premium features may include advanced lessons,
-additional exercises, AI tutoring, and detailed analytics.
+Apply appropriate privacy protections for younger users.
 
-Implement subscription verification on the server.
-Never grant paid features based only on a frontend button.
+==============================
+6. LIVE AUDIO ROOMS
+==============================
 
-DESIGN:
-Use a polished mobile-first interface.
-Support Arabic right-to-left layouts and English
-left-to-right layouts.
-Include language selection, attractive cards,
-progress indicators, accessible controls, and
-clear navigation.
+Create language-practice audio rooms with:
+- A maximum of five participants per room.
+- Room creation and joining.
+- Host controls.
+- Mute and unmute controls.
+- Participant lists.
+- Language and proficiency labels.
+- Leave-room functionality.
+- Permission handling and connection error messages.
+- Reporting and blocking tools.
 
-SECURITY:
-Use secure authentication, authorization, protected
-database access, input validation, privacy settings,
-reporting, blocking, and age-appropriate safeguards.
+Use a real-time audio provider such as LiveKit or another
+suitable service.
 
-TECHNICAL REQUIREMENTS:
-Inspect the existing repository before making changes.
-Preserve existing working features.
-Build a working application, not just a visual mockup.
-Use a suitable database and backend for accounts,
-messages, vocabulary, subscriptions, and room metadata.
-Explain which external services require configuration.
+Enforce the five-person limit on the server, not only
+in the frontend. Protect room access and credentials.
 
-If a feature needs credentials or external services,
-show a clear setup message instead of pretending it works.
+Do not display fake live participants or pretend audio
+works without a configured provider.
 
-Test registration, login, lessons, room capacity,
-messaging, subscription access, and mobile layouts.<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LingoWorld</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;color:white;text-align:center;background:linear-gradient(135deg,#5146e5,#a52be2,#e33da8);min-height:100vh}
-header{padding:20px;font-size:25px;font-weight:bold}
-main{max-width:650px;margin:auto;padding:15px}
-h2{font-size:34px}
-.languages{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
-.card{background:white;color:#171717;border:0;border-radius:22px;padding:25px 8px;font-size:20px;font-weight:bold;cursor:pointer;min-height:125px}
-.flag{display:block;font-size:38px;margin-bottom:10px}
-.word{background:#ffffff25;border-radius:25px;padding:20px;margin-top:28px}
-.back,.action{border:0;border-radius:12px;padding:12px 22px;margin:8px;font-size:17px;cursor:pointer}
-.back{background:white;color:#5b21b6}
-.action{background:#ffe36e;color:#30204c;font-weight:bold}
-.lesson{background:#ffffff20;border-radius:18px;padding:15px;margin:12px 0}
-.lesson button{background:white;color:#222;border:0;border-radius:10px;padding:10px;margin:5px;cursor:pointer}
-#result{font-size:20px;font-weight:bold;margin:15px}
-</style>
-</head>
-<body>
-<header>🌍 LingoWorld</header>
-<main id="app">
-<h2>تعلم أي لغة<br>في أي مكان</h2>
-<p>تعلم اللغات بطريقة سهلة وممتعة</p>
-<div class="languages">
-<button class="card" onclick="openLanguage('en')"><span class="flag">🇬🇧</span>English</button>
-<button class="card" onclick="openLanguage('es')"><span class="flag">🇪🇸</span>Spanish</button>
-<button class="card" onclick="openLanguage('fr')"><span class="flag">🇫🇷</span>French</button>
-<button class="card" onclick="openLanguage('tr')"><span class="flag">🇹🇷</span>Turkish</button>
-</div>
-<div class="word"><h2>كلمة اليوم</h2><p style="font-size:30px;font-weight:bold">Hello - مرحباً</p></div>
-</main>
-<script>
-const data={
-en:{name:"الإنجليزية",voice:"en-GB",lessons:[
-{title:"التحيات",words:[["Hello","مرحباً"],["Good morning","صباح الخير"],["Goodbye","إلى اللقاء"]]},
-{title:"التعارف",words:[["My name is Ali","اسمي علي"],["How are you?","كيف حالك؟"],["Thank you","شكراً"]]}
-]},
-es:{name:"الإسبانية",voice:"es-ES",lessons:[
-{title:"التحيات",words:[["Hola","مرحباً"],["Buenos días","صباح الخير"],["Adiós","إلى اللقاء"]]},
-{title:"كلمات أساسية",words:[["Gracias","شكراً"],["Por favor","من فضلك"],["Sí","نعم"]]}
-]},
-fr:{name:"الفرنسية",voice:"fr-FR",lessons:[
-{title:"التحيات",words:[["Bonjour","مرحباً"],["Bonsoir","مساء الخير"],["Au revoir","إلى اللقاء"]]},
-{title:"كلمات أساسية",words:[["Merci","شكراً"],["S'il vous plaît","من فضلك"],["Oui","نعم"]]}
-]},
-tr:{name:"التركية",voice:"tr-TR",lessons:[
-{title:"التحيات",words:[["Merhaba","مرحباً"],["Günaydın","صباح الخير"],["Hoşça kal","إلى اللقاء"]]},
-{title:"كلمات أساسية",words:[["Teşekkürler","شكراً"],["Lütfen","من فضلك"],["Evet","نعم"]]}
-]}
-};
-function openLanguage(code){
-const lang=data[code];
-let html='<button class="back" onclick="home()">← الرئيسية</button>';
-html+='<h2>تعلم '+lang.name+'</h2><p>اختاري كلمة لتسمعي نطقها، أو ابدئي الاختبار.</p>';
-lang.lessons.forEach((lesson,i)=>{
-html+='<section class="lesson"><h3>'+lesson.title+'</h3>';
-lesson.words.forEach(w=>{
-html+='<p style="font-size:21px"><b>'+w[0]+'</b> — '+w[1]+'</p>';
-html+='<button onclick="speakWord(\''+code+'\',\''+w[0].replace(/'/g,"\\'")+'\')">🔊 اسمع النطق</button>';
-});
-html+='<button class="action" onclick="quiz(\''+code+'\','+i+')">ابدأ الاختبار</button></section>';
-});
-document.getElementById('app').innerHTML=html;
-window.scrollTo(0,0);
-}
-function speakWord(code,word){
-if(!('speechSynthesis' in window)){alert('النطق الصوتي غير مدعوم في هذا المتصفح');return;}
-speechSynthesis.cancel();
-const u=new SpeechSynthesisUtterance(word);
-u.lang=data[code].voice;
-speechSynthesis.speak(u);
-}
-function quiz(code,index){
-const words=data[code].lessons[index].words;
-let html='<button class="back" onclick="openLanguage(\''+code+'\')">← رجوع للدروس</button>';
-html+='<h2>اختبار '+data[code].name+'</h2><p>اختاري الترجمة الصحيحة</p>';
-words.forEach((w,i)=>{
-let options=[w[1],words[(i+1)%words.length][1],words[(i+2)%words.length][1]];
-options.sort(()=>Math.random()-.5);
-html+='<div class="lesson"><p><b>'+w[0]+'</b></p>';
-options.forEach(opt=>{
-html+='<button onclick="checkAnswer(this,\''+encodeURIComponent(opt)+'\',\''+encodeURIComponent(w[1])+'\')">'+opt+'</button>';
-});
-html+='</div>';
-});
-html+='<div id="result"></div>';
-document.getElementById('app').innerHTML=html;
-window.scrollTo(0,0);
-}
-function checkAnswer(btn,chosen,correct){
-const box=btn.parentElement;
-if(box.dataset.done)return;
-box.dataset.done='1';
-const isCorrect=chosen===correct;
-btn.style.background=isCorrect?'#a7f3d0':'#fecaca';
-box.querySelectorAll('button').forEach(b=>b.disabled=true);
-const msg=document.createElement('p');
-msg.textContent=isCorrect?'إجابة صحيحة! أحسنت 🎉':'الإجابة الصحيحة: '+decodeURIComponent(correct);
-box.appendChild(msg);
-}
-function home(){
-document.getElementById('app').innerHTML=`
-<h2>تعلم أي لغة<br>في أي مكان</h2>
-<p>تعلم اللغات بطريقة سهلة وممتعة</p>
-<div class="languages">
-<button class="card" onclick="openLanguage('en')"><span class="flag">🇬🇧</span>English</button>
-<button class="card" onclick="openLanguage('es')"><span class="flag">🇪🇸</span>Spanish</button>
-<button class="card" onclick="openLanguage('fr')"><span class="flag">🇫🇷</span>French</button>
-<button class="card" onclick="openLanguage('tr')"><span class="flag">🇹🇷</span>Turkish</button>
-</div>
-<div class="word"><h2>كلمة اليوم</h2><p style="font-size:30px;font-weight:bold">Hello - مرحباً</p></div>`;
-window.scrollTo(0,0);
-}
-</script>
-</body>
-</html>
+==============================
+7. AI LANGUAGE TUTOR
+==============================
+
+Build an AI tutor that can:
+- Explain grammar.
+- Correct learner-written sentences.
+- Explain mistakes clearly.
+- Practice conversations.
+- Generate exercises appropriate to the learner's level.
+- Translate and explain vocabulary.
+- Provide constructive feedback.
+
+Use a secure server-side API integration.
+Never expose AI API keys in browser JavaScript.
+
+If no API key is configured, show a clear setup message
+instead of pretending the AI tutor is operational.
+
+==============================
+8. FREE AND PREMIUM PLANS
+==============================
+
+Create a free plan and a premium plan.
+
+Free plan:
+- Access to selected lessons.
+- Basic quizzes.
+- Basic progress tracking.
+
+Premium plan:
+- Additional lessons and practice features.
+- Expanded progress analytics.
+- AI tutor access according to configured limits.
+- Additional learning tools.
+
+Include a pricing page, plan comparison, and subscription
+management interface.
+
+Use a legitimate payment provider supported in the target
+country. Verify subscriptions securely on the server using
+payment-provider webhooks.
+
+Never trust a frontend-only premium flag.
+Do not claim payments work until provider credentials,
+webhooks, and test transactions have been verified.
+
+==============================
+9. BACKEND AND DATABASE
+==============================
+
+Use a maintainable full-stack architecture.
+
+Recommended options:
+- Frontend: React, TypeScript, and a modern styling system.
+- Backend: secure server-side API.
+- Database: PostgreSQL.
+- Authentication: Supabase Auth or another trusted provider.
+- Audio: LiveKit or another real-time audio provider.
+- AI: a server-side model API integration.
+- Payments: a provider available for the target market.
+
+Choose compatible technologies and explain the reasons.
+
+Create database tables and migrations for:
+- Users and profiles.
+- Languages and vocabulary.
+- Lessons and quizzes.
+- Learning progress.
+- Daily goals and achievements.
+- Conversations and messages.
+- Audio rooms and memberships.
+- Reports and blocks.
+- Subscription records.
+
+Implement database access rules, input validation,
+authorization, rate limits, and secure error handling.
+
+Keep all secrets in server-side environment variables.
+Provide an .env.example file containing placeholders only.
+
+==============================
+10. TESTING AND QUALITY
+==============================
+
+Test:
+- Registration and login.
+- Password reset.
+- Language selection.
+- Lessons and pronunciation.
+- Quiz scoring.
+- Progress persistence.
+- Arabic RTL and English LTR.
+- Mobile and desktop layouts.
+- Message authorization.
+- Blocking and reporting.
+- The five-person audio-room limit.
+- AI tutor errors and missing API keys.
+- Subscription verification.
+- Unauthorized access and invalid input.
+
+Add automated tests where appropriate.
+
+Fix build errors and important bugs before declaring
+the project ready.
+
+Never claim a test passed unless it was actually run.
+
+==============================
+11. REQUIRED DELIVERABLES
+==============================
+
+Provide:
+1. Complete project source code.
+2. A clear folder structure.
+3. Frontend and backend implementation.
+4. Database schema and migration files.
+5. Authentication and authorization rules.
+6. An .env.example file.
+7. Installation instructions.
+8. Local development instructions.
+9. Deployment instructions.
+10. Instructions for configuring external services.
+11. Automated tests and their actual results.
+12. A list of features that work now.
+13. A list of features that still require configuration.
+
+Start by inspecting the existing repository.
+
+Then:
+1. Explain the existing project structure.
+2. Create an implementation plan.
+3. Implement the core application.
+4. Configure the database and security rules.
+5. Run the available tests.
+6. Fix any issues discovered.
+7. Provide clear setup instructions.
+
+Do not stop after creating a static homepage.
+Build a functional application with a maintainable architecture.
+
+Do not use fake data to simulate real authentication,
+live audio, private messaging, AI responses, or payments.
+
+If a service cannot be configured automatically, implement
+the integration points, document the missing credentials,
+and explain how to finish setup.
+
+The final result should be a professional, secure,
+maintainable language-learning platform called LingoWorld.
